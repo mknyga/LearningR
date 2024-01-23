@@ -1,7 +1,9 @@
+Title: LearningR
 Package: LearningR
-Type: Project
-Version: 0.0.1
+1Version: 0.0.1
 Imports:
     knitr,
     rmarkdown
 Encoding: UTF-8
+URL: https://github.com/mknyga/LearningR
+BugReports: https://github.com/mknyga/LearningR/issues
