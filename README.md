@@ -2,6 +2,8 @@ Anders askeland - diabetes
 
 Hello there - learning R
 
+learning GitHub
+
 TODO: Add more to the title of your project here
 
 # LearningR:
