@@ -4,6 +4,28 @@ author: "MKN"
 format: html
 editor: visual
 ---
+
+1. MD Mette Kathrine Nygaard
+2. Dept. of Hematology
+3. Aarhus University Hospital
+
+# Intro
+
+**welcome** to this *chapter*
+
+# Methods and Results
+
+we **used** the *methods* described here
+
+## Analysis
+
+# Discussion
+
+```{r}
+2+2
+```
+
+
 ```{r setup}
 #| message: FALSE
 #| warning: FALSE
@@ -58,3 +80,7 @@ NHANES_small %>%
   ) %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
+
+1. Mette Kathrine Nygaard
+2. item 2
+3. item 3
