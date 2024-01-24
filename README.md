@@ -1,5 +1,7 @@
 Anders askeland - diabetes
 
+Hello there - learning R
+
 TODO: Add more to the title of your project here
 
 # LearningR:
