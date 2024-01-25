@@ -22,7 +22,7 @@ we **used** the *methods* described here
 # Discussion
 
 ```{r}
-2+2
+2 + 2
 ```
 
 
@@ -81,6 +81,66 @@ NHANES_small %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
 
-1. Mette Kathrine Nygaard
-2. item 2
-3. item 3
+# images
+
+Cute kitten in @fig-kitten
+
+![Image by Google](images/kitten.jpeg){#fig-kitten width="50%" height="50%"}
+
+# One variable plot
+
+```{r}
+#| fig-cap: "Distribution of BMI"
+#| label: fig-bmi-histo
+#| message: false
+
+NHANES_small %>%
+  filter(bmi <= 60) %>%
+  ggplot(aes(x = bmi)) +
+  geom_histogram(na.rm = TRUE)
+```
+```{r}
+#| label: fig-diabetes-education
+#| fig-cap: "Count of diabetes and education"
+#| fig-subcap:
+#| - "Number of those with different Education"
+#| - "Number of those with or whitout Diabetes"
+#| layout-ncol: 2
+
+NHANES_small %>%
+  filter(!is.na(education)) %>%
+  ggplot(aes(x = education)) +
+  geom_bar()
+
+NHANES_small %>%
+  filter(!is.na(diabetes)) %>%
+  ggplot(aes(x = diabetes)) +
+  geom_bar()
+```
+
+# Plotting two variables
+
+```{r}
+NHANES_small %>%
+  ggplot(aes(x = bmi, y = bp_sys_ave)) +
+  geom_hex(na.rm = TRUE) +
+  geom_smooth(na.rm = TRUE)
+```
+
+# Plotting two discrete variables
+
+```{r}
+NHANES_small %>%
+  filter(!is.na(education), !is.na(diabetes)) %>%
+  ggplot(aes(x = diabetes, fill = education)) +
+  geom_bar(position = position_dodge())
+```
+
+#  Plotting discrete and continous variables
+
+```{r}
+NHANES_small %>%
+  filter(!is.na(diabetes), bmi <= 60) %>%
+  ggplot(aes(x = diabetes, y = bmi)) +
+  geom_violin(na.rm = TRUE)
+```
